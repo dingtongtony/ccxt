@@ -200,6 +200,7 @@ class binance(Exchange):
                     # UID(sapi) request rate limit of 180 000 per minute
                     # 1 UID(sapi) => cost = 1200 / 180 000 = 0.006667
                     'get': {
+                        'downloadLink': 100,
                         'system/status': 0.1,
                         # these endpoints require self.apiKey
                         'accountSnapshot': 240,  # Weight(IP): 2400 => cost = 0.1 * 2400 = 240
@@ -366,6 +367,7 @@ class binance(Exchange):
                         'staking/personalLeftQuota': 0.1,
                     },
                     'post': {
+                        'futuresHistDataId': 100,
                         'asset/dust': 1,
                         'asset/dust-btc': 0.1,
                         'asset/transfer': 0.1,
